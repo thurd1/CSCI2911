@@ -10,14 +10,19 @@ import java.util.*;
 public class GuessingGame {
 
     public static void main(String[] args) {
-        int computerNum = random();
-        int userNum = user();
-        if(compare(computerNum,userNum)){
-            System.out.println("That's right");
+        int correct = 0, incorrect = 0;
+        for (int i = 1; i <= 5; i++) {
+            int computerNum = random();
+            int userNum = userNumber();
+            if (compare(computerNum, userNum)) {
+                System.out.println("That's right");
+                correct++;
+            } else {
+                System.out.println("Nope");
+                incorrect++;
+            }
         }
-        else{
-            System.out.println("Nope");
-        }
+        System.out.println("You guessed "+correct+" out of 5correct and "+incorrect+" incorrectly out of 5");
     }
 
     /**
