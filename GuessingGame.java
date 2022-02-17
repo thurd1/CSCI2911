@@ -21,9 +21,9 @@ public class GuessingGame {
     }
 
     /**
-     * randomly generates a number between 1-100
+     * random - randomly generates a number between 1-100
      *
-     * @return
+     * @return rNum
      */
     public static int random() {
         Random anyNum = new Random();
@@ -34,20 +34,23 @@ public class GuessingGame {
     /**
      * outputs the user to guess a number
      *
-     * @return
+     * @return user
      */
     public static int user() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Guess a number between 1-100");
+        while (!keyboard.hasNextInt()) {     //validates that the user enters an integer only: a..z..u..5 output: Nope
+            keyboard.next();
+        }
         int user = keyboard.nextInt();
         return user;
     }
 
     /**
-     * compares user to rNum to calculate if the random number equals the users guess
+     * compare - compares user to rNum to calculate if the random number equals the users guess
      * @param user
      * @param rNum
-     * @return
+     * @return true or false
      */
     public static boolean compare(int user, int rNum) {
         if (user == rNum) {
