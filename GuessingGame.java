@@ -62,7 +62,7 @@ public class GuessingGame {
     public static int userNumber() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Guess a number between 1-100");//output
-        int user = -1; //ininitalize user to be an inva;od number <0 or >100
+        int user = -1; //ininitalize user to be an invalid number <0 or >100
         while (user < 1 || user > 100) {
             System.out.println("Enter only numbers between 1-100"); //output
             String input = keyboard.nextLine(); //takes input as a string
