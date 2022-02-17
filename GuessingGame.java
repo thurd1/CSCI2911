@@ -59,5 +59,20 @@ public class GuessingGame {
             return false;
         }
     }
+    public static int userNumber() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Guess a number between 1-100");//output
+        int user = -1; //ininitalize user to be an inva;od number <0 or >100
+        while (user < 1 || user > 100) {
+            System.out.println("Enter only numbers between 1-100"); //output
+            String input = keyboard.nextLine(); //takes input as a string
+            try {
+                user = Integer.valueOf(input); //checks to see if input is an integer. If it isn't goes to catch clause
+            } catch (NumberFormatException e) {
+                user = -1; //sets user to an invalid number to make loop repeat
+            }
+        }
+        return user;
+    }
 }
 
