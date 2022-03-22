@@ -19,7 +19,7 @@ package javaapplication6;
             Scanner keyboard = new Scanner(System.in);
      
             String userName;
-            double userKilos, userMeters;
+            int userKilos, userMeters;
             int count = 0;
            while(count<=4)
            {
@@ -31,12 +31,12 @@ package javaapplication6;
             userName = keyboard.next();
             
                System.out.println("What is your weight in kilograms?");
-               userKilos = keyboard.nextDouble();
+               userKilos = keyboard.nextInt();
                
                System.out.println("What is your height in meters?");
-               userMeters = keyboard.nextDouble();
+               userMeters = keyboard.nextInt();
                
-               double bodyMaxIndexKilos = userKilos/userMeters^2;
+               int bodyMaxIndexKilos = userKilos/userMeters^2;
                
                System.out.println("Hi "+userName+", your BMI is "+bodyMaxIndexKilos); 
 
