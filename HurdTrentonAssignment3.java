@@ -1,50 +1,101 @@
 /*
  * @author Trenton Hurd
- * @date 28 January 2022
- * Assignment:
- *
- * Algorithm
- * 1. Prompt the user for a message that they would like to encrypt
- * 2. Ask the user for the key that they would like to use
- * 3. Loop the message to look at each character one at a time
- * 4. Shift only letters (not special characters or spaces)
- * 5. Wrap around 
- * 6. Output the prompted message using the provided key
+ * @date 23 March 2022
+ * @assignment: HurdTrentonAssignment3
+ * Algortithm: 
+ * 1. Display a menu to the user
+ * 2. addName 
+ * 3. 
+ * 4. 
+ * 5. 
+ * 6. 
+ * 7. 
  */
-package csci2916;
-
 import java.util.*;
 
 public class HurdTrentonAssignment3 {
 
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("Enter a message that you would like to be encrypted!"); //prompts user for the message
-        String user = keyboard.nextLine(); //encryptedMessage will be what the user enters
-        System.out.println("What would you like the key to be?"); //prompts user for the key
-        int shift = keyboard.nextInt(); //userKey will be the key the user wants
 
-        
-        for (int i = 0; i < user.length(); i++) {
-            char letter = user.charAt(i); //starts the encyption at the first position (0)
-            if (letter >= 'A' && letter <= 'Z') {
-                int newLetter = (int) letter + shift;
-                if (newLetter > 'Z') {
-                    newLetter = newLetter - 26;
-                }
-                System.out.print((char) newLetter);
-            } else if (letter >= 'a' && letter <= 'z') {
-                int newLetter = (int) letter + shift;
-                if (newLetter > 'z') {
-                    newLetter = newLetter - 26; }
-                    System.out.print((char) newLetter);
-
-            } else {
-                    System.out.print(letter);
-                }
+        menu();
+        int userAnswer = keyboard.nextInt();
+        if (userAnswer == 1) {
+            namesArray();
+        } else if (userAnswer == 2) {
+           namesArray(displayArray());
+            System.out.println("Your friends are: ");
+            for (int i = 0; i < names.length; i++) {
+                System.out.println(names[i]);
 
             }
-            }
+        } else if (userAnswer == 3) {
+            System.out.println("What name are you looking for? ");
+          
+            String nameLooking = keyboard.nextLine();
+            if(Arrays.binarySearch() < 0;{
+            System.out.println("Not Found");
+        } else{
+                System.out.println("Found");
+                }
+        } else if (userAnswer == 4) {
+            System.out.println(Arrays.toString(namesArray()));
+        } else if (userAnswer == 5) {
+            System.out.println(Arrays.asList(namesArray()));
+        } else if (userAnswer == 6) {
+            System.out.println("Good bye");
+            System.exit(0);
+        }/*
+        while (userAnswer >= 7) {
+            System.out.println("Invalid. Please enter a selection between 1-6.");
+            userAnswer = keyboard.nextInt();
+        }
+         */
     }
-        
-    
+
+    public static void menu() {
+        System.out.println("The Names Menu\n"
+                + "*********************************\n"
+                + "1. Add Names\n"
+                + "2. Print out all names\n"
+                + "3. Search for name in the list\n"
+                + "4. Print out all names sorted\n"
+                + "5. How many names are in the list?\n"
+                + "6. Exit\n"
+                + "*********************************");
+    }
+
+    /**
+     *
+     * @return
+     */
+    public static String[] namesArray() {
+        Scanner keyboard = new Scanner(System.in);
+        int namesAdd;
+        System.out.println("How many names would you like to enter? Only enter an integer."); //Output
+        namesAdd = keyboard.nextInt();
+
+        String[] names = new String[namesAdd];
+        for (int i = 0; i < namesAdd; i++) { //Loops as many times as the users wants to add friends
+            System.out.println("Enter the name of friend " + (i + 1)); //Output + adds 1 to each friend the user wants to add
+            names[i] = keyboard.next(); //stores the names of user entered friends
+        }
+        return names;//returns the list of friends to main
+    }
+
+    public static void displayNames(String[] names) {
+        System.out.println("Your friends are: ");
+
+        for (int i = 0; i < names.length; i++) {
+            System.out.println(names[i]);
+        }
+    }
+
+    public static void searchNames() {
+
+    }
+
+    public static void listNames() {
+
+    }
+}
