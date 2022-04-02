@@ -1,6 +1,6 @@
 /*
- * 
- *
+ * @Author Trenton Hurd
+ * @Date 1 April 2022
  * 
  */
 package csci2916;
@@ -22,8 +22,9 @@ public class HurdTrentonLab12Demo {
         make = keyboard.nextLine(); //scanner for make
         
         Motorcycles user = new Motorcycles(make, year);
-        
+       
         System.out.println(user.toString());
+        
     }
 
     public static int inputValidation() {
@@ -46,13 +47,6 @@ public class HurdTrentonLab12Demo {
         } while (!valid);
         return year; //returns year to main()
     }
-
-    /*
-    public static void speed(int speed){
-        for(int i =0; i > 2; i++){
-            System.out.println(speed = 5 * i);
-        }
-    }
-*/
-    
+   
+  
 }
