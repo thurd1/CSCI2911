@@ -76,6 +76,6 @@ public class Graduate extends Student {
      * @return 
      */
     public String toString(){
-        return "Field: "+field+". Credits: "+credits+".";
+        return super.toString() + "Field: "+field+". Credits: "+credits+".";
 }
 }
