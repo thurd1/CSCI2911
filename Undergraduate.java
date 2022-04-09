@@ -97,7 +97,7 @@ public class Undergraduate extends Student{
      * @return 
      */
     public String toString(){
-        return "Major: "+major+". Number of General Education Credits: "+numberOfGenEdCredits+". Number of Major Credits: "+numberOfMajorCredits+".";
+        return super.toString() + "Major: "+major+". Number of General Education Credits: "+numberOfGenEdCredits+". Number of Major Credits: "+numberOfMajorCredits+".";
     }
     
 }
